@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Verificación de correo electrónico con JavaScript</title>
+	<script>
+		function validarEmail(email) {
+			// Expresión regular para verificar si el correo electrónico es válido
+			var re = /\S+@\S+\.\S+/;
+			return re.test(email);
+		}
+
+		function verificar() {
+			// Obtener el valor del correo electrónico ingresado
+			var email = document.getElementById("email").value;
+
+			// Verificar si el correo electrónico es válido
+			if (validarEmail(email)) {
+				alert("El correo electrónico es válido");
+			} else {
+				alert("El correo electrónico es inválido");
+			}
+		}
+	</script>
+</head>
+<body>
+    <form action="submit-form.php" method="post">
+	<h1>Verificación de correo electrónico con JavaScript</h1>
+	<p>Ingrese su correo electrónico:</p>
+    <label for="email">email</label>
+	<input type="text" id="email">
+	<button onclick="verificar()">Verificar</button>
+    </form>
+</body>
+</html>
